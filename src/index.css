@@ -1,0 +1,59 @@
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #32ff7e;            /* Softened terminal green */
+    --color-primary-alt: #2aff6a;        /* Light neon mint */
+    --color-accent: #00ffc8;             /* Elegant cyan accent */
+    
+    --color-bg-dark: #0c0f0c;            /* Deep green-tinted black */
+    --color-bg-dark-alt: #141814;        /* Slight contrast dark */
+    --color-bg-light: #f8f9fa;           /* Light for neutral/light mode */
+    --color-bg-white: #ffffff;
+  
+    --color-text-dark: #e0e0e0;          /* Clean light text for dark bg */
+    --color-text-dark-alt: #a0a0a0;      /* Subtle gray */
+    --color-text-light: #2d3748;         /* For light backgrounds */
+    --color-text-light-alt: #4a5568;
+  
+    --color-terminal-green: #00ff41;     /* Original terminal green preserved */
+  
+    --color-error: #ff4d6d;              /* Softer red for better UX */
+    --color-warning: #ffcc00;            /* Balanced yellow tone */
+  }
+  
+
+  html {
+    font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+    background-color: var(--color-bg-dark);
+    color: var(--color-terminal-green);
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+  }
+  .font-sans {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .text-terminal-green {
+    color: var(--color-terminal-green);
+  }
+  .bg-terminal-dark {
+    background-color: var(--color-bg-dark);
+  }
+  .bg-terminal-dark-alt {
+    background-color: var(--color-bg-dark-alt);
+  }
+  .text-error {
+    color: var(--color-error);
+  }
+  .text-warning {
+    color: var(--color-warning);
+  }
+}
