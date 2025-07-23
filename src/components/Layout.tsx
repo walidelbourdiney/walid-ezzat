@@ -19,12 +19,9 @@ const Layout: React.FC = () => {
           <Link
             key={link.to}
             to={link.to}
-            className={`relative px-3 py-1 transition-colors duration-200 ${location.pathname === link.to ? 'underline underline-offset-4 decoration-terminal-green' : 'hover:text-accent-green'}`}
+            className={`relative px-3 py-1 transition-colors duration-200 ${location.pathname === link.to ? 'bg-terminal-green text-black' : 'hover:bg-terminal-green/20'}`}
           >
             {link.label}
-            {location.pathname === link.to && (
-              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-1 bg-terminal-green animate-pulse rounded"></span>
-            )}
           </Link>
         ))}
       </nav>

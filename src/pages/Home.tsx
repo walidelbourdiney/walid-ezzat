@@ -15,10 +15,19 @@ const Home: React.FC = () => {
     <div className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-[#0a0e0a] via-[#101c10] to-[#1a1d1a] overflow-hidden">
       {/* Animated background shimmer */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.15 }}
+        animate={{
+          backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+        }}
+        transition={{
+          duration: 20,
+          ease: 'linear',
+          repeat: Infinity,
+        }}
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'repeating-linear-gradient(120deg, #00ff41 0 2px, transparent 2px 40px)' }}
+        style={{
+          background: 'linear-gradient(120deg, #0a0e0a, #101c10, #1a1d1a, #101c10, #0a0e0a)',
+          backgroundSize: '400% 400%',
+        }}
       />
       <TerminalWindow>
         <div className="flex flex-col items-center gap-6">
@@ -28,11 +37,14 @@ const Home: React.FC = () => {
             className="text-lg md:text-xl text-terminal-green text-center"
           />
           <motion.button
-            whileHover={{ scale: 1.07, boxShadow: '0 0 16px #00ff41' }}
-            whileTap={{ scale: 0.97 }}
-            className="mt-8 px-8 py-3 rounded-lg bg-terminal-green text-black font-bold text-lg shadow-lg hover:bg-accent-green transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-terminal-green"
+            whileHover={{ scale: 1.05, textShadow: "0 0 8px #00ff41", boxShadow: "0 0 15px #00ff41" }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-8 px-6 py-2 border-2 border-terminal-green text-terminal-green font-bold text-lg bg-transparent transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-terminal-green"
           >
-            Ready to build something amazing?
+            <span className="flex items-center gap-2">
+              <span className="text-xl">&gt;</span>
+              <span>Initiate Contact</span>
+            </span>
           </motion.button>
         </div>
       </TerminalWindow>
