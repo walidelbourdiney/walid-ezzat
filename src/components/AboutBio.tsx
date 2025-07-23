@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import TypingAnimation from './TypingAnimation';
+import me from '../assets/me.png';
 
 const bioLines = [
   'From mechanical engineering blueprints to React components -',
@@ -20,10 +21,10 @@ const AboutBio: React.FC = () => {
       className="flex flex-col items-center gap-8"
     >
       {/* Avatar placeholder */}
-      <div className="w-32 h-32 rounded-full bg-terminal-green/10 border-4 border-terminal-green shadow-lg flex items-center justify-center text-6xl text-terminal-green mb-2 animate-pulse-glow">
-        <span role="img" aria-label="avatar">👤</span>
+      <div className=" w-40 h-40 rounded-full bg-terminal-green/10 border-4 border-terminal-green shadow-lg flex items-center justify-center text-6xl text-terminal-green mb-2 animate-pulse-glow">
+     <img  src={me} alt="avatar" className="w-full h-full object-cover rounded-full " />
       </div>
-      <div className="w-full max-w-xl">
+      <div className="mt-10 w-full max-w-xl">
         <TypingAnimation lines={bioLines} typingSpeed={30} />
       </div>
       <a
