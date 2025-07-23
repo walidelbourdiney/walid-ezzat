@@ -43,8 +43,10 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({ lines, typingSpeed = 
   return (
     <div className={`whitespace-pre font-mono ${className || ''}`.trim()}>
       {displayed.map((line, i) => (
-        <div key={i} className="flex items-center">
-          {line}
+        <div key={i} className="relative flex items-center">
+          <span className="glitch" data-text={line}>
+            {line}
+          </span>
           {i === displayed.length - 1 && !done && (
             <AnimatePresence>
               <motion.span
